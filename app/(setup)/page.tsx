@@ -1,5 +1,7 @@
+import { InitialModal } from "@/components/modals/initial-modal"
 import { db } from "@/lib/db"
 import { initialProfile } from "@/lib/initial-profile"
+import { INSPECT_MAX_BYTES } from "buffer"
 import { redirect } from "next/navigation"
 
 const SetupPage = async() => {
@@ -20,7 +22,7 @@ const SetupPage = async() => {
     return redirect(`/server/${server.id}`)
   }
   return (
-    <div>Create a Server</div>
+    <InitialModal/>
   )
 }
 
