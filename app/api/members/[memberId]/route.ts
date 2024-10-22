@@ -8,8 +8,8 @@ export async function DELETE(req:Request,{params}:{params:{memberId:string}}){
 
     const { searchParams } = new URL(req.url);
 
-    const profile = await currentProfile();
     const serverId = searchParams.get("serverId");
+    const profile = await currentProfile();
 
     if (!profile) {
       return new NextResponse("Unauthorized", { status: 401 });
